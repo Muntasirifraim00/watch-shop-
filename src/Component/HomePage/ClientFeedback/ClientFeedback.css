@@ -1,0 +1,9 @@
+.customer-logo{
+    width: 60px;
+}
+.customer-card{
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 2px;
+    height: 250px;
+}
