@@ -11,18 +11,18 @@ import OrderedServices from './OrderedServices';
 const CustomerOrderItems = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    
+
     console.log(loggedInUser);
 
     const [registeredCustomer, setRegisteredCustomer] = useState([]);
 
-    useEffect( () => {
-        fetch(`https://evening-coast-46137.herokuapp.com/orderedItems?email=${loggedInUser.email}`)
-        .then(re => re.json())
-        .then(result => setRegisteredCustomer(result))
-    },[])
-    
-    return ( 
+    useEffect(() => {
+        fetch(`https://sleepy-reaches-72438.herokuapp.com/orderedItems?email=${loggedInUser.email}`)
+            .then(re => re.json())
+            .then(result => setRegisteredCustomer(result))
+    }, [])
+
+    return (
         <div>
             <div className='row mt-5 mx-3'>
                 <div className="col-md-3">
@@ -40,7 +40,7 @@ const CustomerOrderItems = () => {
                 <div className="col-md-9 bg-light p-5">
                     <div className="row">
                         {
-                            registeredCustomer.map( service => <OrderedServices key={service._id} serviceInfo={service}></OrderedServices>)
+                            registeredCustomer.map(service => <OrderedServices key={service._id} serviceInfo={service}></OrderedServices>)
                         }
                     </div>
                 </div>

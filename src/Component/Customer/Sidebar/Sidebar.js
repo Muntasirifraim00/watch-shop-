@@ -20,14 +20,21 @@ const Sidebar = () => {
                 </li>
                 <li className="my-3">
                     <Link style={{textDecoration: "none"}} to="/customer/orderedItems">
-                        <span className="sidebar-items"><FontAwesomeIcon className="mx-2" icon={faShoppingBag} />Service list</span>
+                        <span className="sidebar-items"><FontAwesomeIcon className="mx-2" icon={faShoppingBag} />Orderd list</span>
                     </Link>
                 </li>
                 <li className="my-3">
                     <Link style={{textDecoration: "none"}} to="/customer/review">
                         <span className="sidebar-items"><FontAwesomeIcon className="mx-2" icon={faCommentAlt} />Review</span>
                     </Link>
+                  
                 </li>
+                <li className="my-3">
+                <Link style={{textDecoration: "none"}} to="/">
+                        <span className="sidebar-items"><FontAwesomeIcon className="mx-2" icon={faCommentAlt} />LogOut</span>
+                    </Link>
+                </li>
+              
             </ul>
         </div>
     );

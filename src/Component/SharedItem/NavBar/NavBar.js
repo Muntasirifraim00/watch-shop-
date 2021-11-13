@@ -21,10 +21,10 @@ const NavBar = () => {
                         <Link style={{textDecoration: "none"}} to="/"><a class="nav-link mr-3 font-weight-bold">Home <span class="sr-only">(current)</span></a></Link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Portfolio</a>
+                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Watches</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-3 font-weight-bold" href="#">Our Team</a>
+                        <a class="nav-link mr-3 font-weight-bold" href="#">Best collection</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mr-3 font-weight-bold" href="#">Contact Us</a>
@@ -33,8 +33,15 @@ const NavBar = () => {
                         <Link style={{textDecoration: "none"}} to="/admin/serviceList" class="nav-link mr-3 font-weight-bold" >Admin</Link>
                     </li>
                     <li class="nav-item">
+                        
+                    </li>
+                    <li class="nav-item">
                         {
-                            loggedInUser.isLoggedIn ? <h6 className='m-3'>{loggedInUser.name}</h6>
+                            loggedInUser.isLoggedIn ? 
+                            <div className='d-flex' >
+                            <h6 className='m-3'>{loggedInUser.name}</h6>
+                            <Link style={{textDecoration: "none"}} to="customer/placeOrder" class="nav-link mr-3 font-weight-bold" >Dashboard</Link>
+                           </div>
                             : <Link to="/login"><button className="btn btn-dark mr-3 px-4">Login</button></Link>
                         }
                         

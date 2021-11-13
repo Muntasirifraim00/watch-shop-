@@ -17,7 +17,7 @@ const Home = () => {
                 <MainHeader></MainHeader>
             </div>
             <div>
-                <OurClient></OurClient>
+                {/* <OurClient></OurClient> */}
                 <Services></Services>
                 <OurWorks></OurWorks>
                 <ClientFeedback></ClientFeedback>

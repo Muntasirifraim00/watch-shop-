@@ -17,6 +17,7 @@ import AddService from './Component/Admin/AddService/AddService';
 import MakeAdmin from './Component/Admin/MakeAdmin/MakeAdmin';
 import AdminCheck from './Component/Admin/AdminCheck';
 import PrivateRouteForAdmin from './Component/Admin/PrivateRouteForAdmin';
+import Sidebar from './Component/Customer/Sidebar/Sidebar';
 
 export const UserContext = createContext();
 
@@ -36,18 +37,21 @@ function App() {
           <Route path="/login">
             <LoginPage></LoginPage>
           </Route>
-          <PrivateRoute path="/customer/placeOrder">
+          <Route path="/customer/placeOrder">
             <CustomerPlaceOrder></CustomerPlaceOrder>
-          </PrivateRoute>
-          <PrivateRoute path="/customer/orderedItems">
+          </Route>
+          <Route path="/customer/orderedItems">
             <CustomerOrderItems></CustomerOrderItems>
-          </PrivateRoute>
-          <PrivateRoute path="/customer/review">
+          </Route>
+          <Route path="/customer/review">
             <CustomerReview></CustomerReview>
-          </PrivateRoute>
+          </Route>
           <Route path="/adminCheck">
             <AdminCheck></AdminCheck>
           </Route>
+          <PrivateRoute path="customer/placeOrder">
+            <Sidebar></Sidebar>
+          </PrivateRoute>
           <PrivateRouteForAdmin path="/admin/serviceList">
             <Admin></Admin>
           </PrivateRouteForAdmin>

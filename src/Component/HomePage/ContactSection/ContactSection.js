@@ -8,8 +8,8 @@ const ContactSection = () => {
         <section style={backgroundStyle} className="row">
             <div className="col-md-5 offset-md-1">
                 <div className="py-5 m-2">
-                    <h2 className="my-4">Let us handle your <br/>project, professionally.</h2>
-                    <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, magni amet mollitia minus totam aliquam omnis debitis tempore soluta doloribus.</small>
+                    <h2 className="my-4">Let us Show You <br/>Some Watches</h2>
+                  
                 </div>
             </div>
             <div className="col-md-6">

@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDV6RdDt3Mgf68CwfG__PwI_NQ4su0tuaQ",
-    authDomain: "creative-agency-1708007.firebaseapp.com",
-    databaseURL: "https://creative-agency-1708007.firebaseio.com",
-    projectId: "creative-agency-1708007",
-    storageBucket: "creative-agency-1708007.appspot.com",
-    messagingSenderId: "1076046501737",
-    appId: "1:1076046501737:web:38c1a194e830eeb11ecff8"
+    apiKey: "AIzaSyBw7LT7aRzF4Bb5_uauHe3nHh54pQT6gjs",
+    authDomain: "health-website07.firebaseapp.com",
+    projectId: "health-website07",
+    storageBucket: "health-website07.appspot.com",
+    messagingSenderId: "227810210307",
+    appId: "1:227810210307:web:949295c0ca4b9bc0d9d436",
+    measurementId: "G-4S2FVQGY2H"
 };
 
 export default firebaseConfig;

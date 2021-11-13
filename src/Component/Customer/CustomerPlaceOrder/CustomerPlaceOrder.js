@@ -24,8 +24,8 @@ const CustomerPlaceOrder = () => {
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
-        const {name, email, details, price} = data;
-        const {serviceName, serviceId, serviceDescription, serviceImg, serviceImage} = loggedInUser;
+        const { name, email, details, price } = data;
+        const { serviceName, serviceId, serviceDescription, serviceImg, serviceImage } = loggedInUser;
         const formData = new FormData();
         formData.append('file', file);
         formData.append('name', name);
@@ -34,16 +34,16 @@ const CustomerPlaceOrder = () => {
         formData.append('service', serviceName);
         formData.append('serviceDescription', serviceDescription);
         formData.append('serviceImg', serviceImg);
-        if (serviceImage !== undefined){
+        if (serviceImage !== undefined) {
             formData.append('serviceImage', serviceImage.img);
         }
         formData.append('details', details);
         formData.append('price', price);
 
-        fetch('https://evening-coast-46137.herokuapp.com/addCustomer', {
+        fetch('https://sleepy-reaches-72438.herokuapp.com/addCustomer', {
             method: 'POST',
             body: formData
-            })
+        })
             .then(response => response.json())
             .then(result => {
                 console.log(result);
@@ -52,7 +52,7 @@ const CustomerPlaceOrder = () => {
             .catch(err => {
                 console.error(err)
             })
-        }
+    }
 
     return (
         <div>
@@ -83,21 +83,21 @@ const CustomerPlaceOrder = () => {
 
                         <textarea name="details" className="form-control" rows="5" ref={register({ required: true, maxLength: 60 })} placeholder="Project details"></textarea><br />
 
-                        <div className="form-group d-flex">
+                        {/* <div className="form-group d-flex">
                             <input style={{ width: "30%" }} type="text" className="form-control" name="price" ref={register({ required: true, maxLength: 10 })} placeholder="Price" />
                             {errors.price && <span className="text-danger">This field is required</span>}
 
                             <input onChange={handleFileChange} style={{ width: "30%" }} type="file" name="files" id="exampleFormControlFile1"></input>
                             <label for="exampleFormControlFile1" className="ml-3 py-2">
                                 <FontAwesomeIcon className="mx-3" icon={faCloudUploadAlt} />Upload image
-                        </label>
+                            </label>
 
-                        </div>
+                        </div> */}
 
-                        <input className="btn btn-dark" type="submit" /><br/>
-                            {
-                                isConfirm && <h6 className="text-center text-success">Your order is placed successfully</h6>
-                            }
+                        <input className="btn btn-dark" type="submit" /><br />
+                        {
+                            isConfirm && <h6 className="text-center text-success">Your order is placed successfully</h6>
+                        }
                     </form>
                 </div>
             </div>

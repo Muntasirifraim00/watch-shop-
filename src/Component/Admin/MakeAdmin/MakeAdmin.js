@@ -16,17 +16,17 @@ const MakeAdmin = () => {
 
     const onSubmit = data => {
 
-        fetch("https://evening-coast-46137.herokuapp.com/addAdmin", {
+        fetch("https://sleepy-reaches-72438.herokuapp.com/addAdmin", {
             method: "post",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(result => {
-            console.log(result);
-            setIsConfirm(true);
-         })
-        .catch(err => console.log(err));
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                setIsConfirm(true);
+            })
+            .catch(err => console.log(err));
     };
 
     return (
@@ -51,7 +51,7 @@ const MakeAdmin = () => {
                         <input type="text" className="form-control" name="email" ref={register({ required: true, maxLength: 50 })} placeholder="Give email address" />
                         {errors.email && <span className="text-danger">This field is required</span>} <br />
 
-                        <input className="btn btn-dark" type="submit" /> <br/>
+                        <input className="btn btn-dark" type="submit" /> <br />
                         {
                             isConfirm && <h6 className="text-center text-success">Added as admin successfully</h6>
                         }

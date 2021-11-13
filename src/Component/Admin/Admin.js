@@ -4,6 +4,7 @@ import { UserContext } from '../../App';
 import SidebarForAdmin from './SidebarForAdmin/SidebarForAdmin';
 import logo from '../../images/logos/logo.png';
 import { useState } from 'react';
+import Sidebar from './../Customer/Sidebar/Sidebar';
 
 const Admin = () => {
 
@@ -11,11 +12,11 @@ const Admin = () => {
 
     const [serviceList, setServiceList] = useState([]);
 
-    useEffect( () => {
-        fetch(`https://evening-coast-46137.herokuapp.com/admin`)
-        .then(re => re.json())
-        .then(result => setServiceList(result))
-    },[])
+    useEffect(() => {
+        fetch(`https://sleepy-reaches-72438.herokuapp.com/admin`)
+            .then(re => re.json())
+            .then(result => setServiceList(result))
+    }, [])
 
     return (
         <div>
@@ -31,10 +32,11 @@ const Admin = () => {
             <div className='row my-5 mx-3'>
                 <div className="col-md-3">
                     <SidebarForAdmin></SidebarForAdmin>
+                    {/* <Sidebar></Sidebar> */}
                 </div>
                 <div className="col-md-9 bg-light p-5">
                     <div className="row">
-                        <table className="table p-3" style={{backgroundColor : 'white'}}>
+                        <table className="table p-3" style={{ backgroundColor: 'white' }}>
                             <thead className="thead-light">
                                 <tr>
                                     <th scope="col">Name</th>
@@ -45,7 +47,7 @@ const Admin = () => {
                             </thead>
                             <tbody>
                                 {
-                                    serviceList.map( service => 
+                                    serviceList.map(service =>
                                         <tr>
                                             <td>{service.name}</td>
                                             <td>{service.email}</td>
@@ -54,7 +56,7 @@ const Admin = () => {
                                         </tr>
                                     )
                                 }
-                            </tbody>   
+                            </tbody>
                         </table>
                     </div>
                 </div>

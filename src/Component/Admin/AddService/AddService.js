@@ -16,7 +16,7 @@ const AddService = () => {
     const [isConfirm, setIsConfirm] = useState(false);
 
     const handleFileChange = (e) => {
-        
+
         const newFile = e.target.files[0];
         setFile(newFile);
     }
@@ -25,16 +25,16 @@ const AddService = () => {
 
     const onSubmit = data => {
 
-        const {name, description } = data;
+        const { name, description } = data;
         const formData = new FormData();
         formData.append('file', file);
         formData.append('name', name);
         formData.append('description', description);
 
-        fetch('https://evening-coast-46137.herokuapp.com/addService', {
+        fetch('https://sleepy-reaches-72438.herokuapp.com/addService', {
             method: 'POST',
             body: formData
-            })
+        })
             .then(response => response.json())
             .then(result => {
                 console.log(result);
@@ -43,7 +43,7 @@ const AddService = () => {
             .catch(err => {
                 console.error(err)
             })
-        }
+    }
     return (
         <div>
             <div className='row mt-5 mx-3'>
@@ -77,10 +77,10 @@ const AddService = () => {
 
                         </div>
 
-                        <input className="btn btn-dark" type="submit" /> <br/>
-                            {
-                                isConfirm && <h6 className="text-center text-success">Service added successfully</h6>
-                            }
+                        <input className="btn btn-dark" type="submit" /> <br />
+                        {
+                            isConfirm && <h6 className="text-center text-success">Service added successfully</h6>
+                        }
                     </form>
                 </div>
             </div>
